@@ -6,7 +6,7 @@ import router from "./routes/booksRoute.js";
 import cors from 'cors'
 
 dotenv.config();
-const PORT = 3001;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 //middleware
