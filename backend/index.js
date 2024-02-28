@@ -6,8 +6,7 @@ import router from "./routes/booksRoute.js";
 import cors from 'cors'
 
 dotenv.config();
-const PORT = process.env.PORT || 3000;
-const dbUrl = process.env.dbUrl;
+const PORT = 3001;
 
 const app = express();
 //middleware
@@ -22,7 +21,7 @@ app.get("/", (request, response) => {
 app.use("/books", router);
 
 mongoose
-  .connect(dbUrl)
+  .connect("mongodb+srv://saurav5625:saurav5625@book-store.kxvphhq.mongodb.net/books-collection?retryWrites=true&w=majority")
   .then(() => {
     console.log(`DB connection established`);
     app.listen(PORT, () => {
