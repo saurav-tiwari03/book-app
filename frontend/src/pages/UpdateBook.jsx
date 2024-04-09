@@ -22,7 +22,8 @@ export const UpdateBook = () => {
         setPublishYear(response.data.publishYear)
         setTitle(response.data.title)
         setLoading(false);
-      }).catch((error) => {
+      })
+      .catch((error) => {
         setLoading(false);
         console.log(error);
       });

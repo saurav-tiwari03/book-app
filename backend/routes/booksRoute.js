@@ -28,6 +28,7 @@ router.post('/', async (request, response) => {
     console.log(error.message);
     response.status(500).send({ message: error.message });
   }
+  
 }); 
 //Get all routes on database
 router.get('/', async (request, response) => {
