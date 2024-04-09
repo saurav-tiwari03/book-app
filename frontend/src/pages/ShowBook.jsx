@@ -8,9 +8,10 @@ export const ShowBook = () => {
   const [book,setBook] = useState({});
   const [loading,setLoading] = useState(false);
   const {id} = useParams();
+  const API_KEY = "https://book-app-ghj6.onrender.com"
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:3001/books/${id}`)
+    axios.get(`${API_KEY}/books/${id}`)
     .then((response) => {
       setBook(response.data);
       console.log(response.data);

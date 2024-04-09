@@ -14,9 +14,10 @@ export const UpdateBook = () => {
   const navigate = useNavigate();
   const {id} = useParams();
   const { enqueueSnackbar } = useSnackbar();
+  const API_KEY = "https://book-app-ghj6.onrender.com"
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:3001/books/${id}`)
+    axios.get(`${API_KEY}/books/${id}`)
     .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear)
@@ -36,7 +37,7 @@ export const UpdateBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`${API_KEY}/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });

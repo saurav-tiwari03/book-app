@@ -10,6 +10,7 @@ export const CreateBook = () => {
   const [publishYear,setPublishYear] = useState('');
   const [loading,setLoading] = useState(false);
   const navigate = useNavigate()
+  const API_KEY = "https://book-app-ghj6.onrender.com"
   const handleSaveBook = () => {
     const data = {
       title,
@@ -17,7 +18,7 @@ export const CreateBook = () => {
       publishYear
     };
     setLoading(true);
-    axios.post(`http://localhost:3001/books`,data)
+    axios.post(`${API_KEY}/books`,data)
     .then(() => { 
       setLoading(false);
       navigate('/');

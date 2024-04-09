@@ -10,9 +10,10 @@ export const DeleteBook = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
+  const API_KEY = "https://book-app-ghj6.onrender.com"
   const handleDeleteBook = () => {
     setLoading(true);
-    axios.delete(`http://localhost:3001/books/${id}`)
+    axios.delete(`${API_KEY}/${id}`)
     .then(() => {
       setLoading(false);
       enqueueSnackbar('Book Deleted successfully', { variant: 'success' });
