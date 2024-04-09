@@ -23,7 +23,7 @@ export const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`${API_KEY}books`)
+    axios.get(`${API_KEY}/books`)
       .then((response) => {
         setBooks(response.data.data);
         console.log(response.data.data);
