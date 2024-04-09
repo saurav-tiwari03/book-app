@@ -12,6 +12,7 @@ export const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const API_KEY = "https://book-app-ghj6.onrender.com"
 
   const singOutHandler = () => {
     signOut(getAuth(app)).then((val) => {
@@ -22,7 +23,7 @@ export const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:3001/books`)
+    axios.get(`${API_KEY}books`)
       .then((response) => {
         setBooks(response.data.data);
         console.log(response.data.data);
