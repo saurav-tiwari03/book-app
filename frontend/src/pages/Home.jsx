@@ -57,5 +57,4 @@ export const Home = () => {
         <button className='bg-[#f26422] px-12 py-1 rounded-md text-white font-semibold' onClick={singOutHandler}>Signout</button>
       </div>
     </div>
-  );
-};
+  )}
