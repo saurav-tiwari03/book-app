@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { DeleteBook } from "./pages/DeleteBook";
 import { ShowBook } from "./pages/ShowBook";
@@ -19,16 +19,18 @@ function App() {
     });
     return () => unsubscribe();
   }, []);
+  
 
   return (
     <div className="App " id="website">
       <Routes>
-        <Route path="/" element={loginStatus ? <Home /> : <Login />} />
+        <Route path="/" element={loginStatus ? <Home /> : <Navigate to='/login' />} />
+        <Route path='/login' element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/books/create" element={<CreateBook />} />
+        <Route path="/books/create" element={<CreateBook /> } />
         <Route path="/books/details/:id" element={<ShowBook />} />
         <Route path="/books/edit/:id" element={<UpdateBook />} />
-        <Route path="/books/delete/:id" element={<DeleteBook />} />
+        <Route path="/books/delete/:id" element={<DeleteBook /> } />
       </Routes>
     </div>
   );

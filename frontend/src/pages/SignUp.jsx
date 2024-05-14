@@ -12,11 +12,11 @@ export const SignUp = () => {
   const [email,setEmail ] = useState('');
   const [password,setPassword] = useState('')
   const navigate = useNavigate();
+
   const submitHandler = () => {
     console.log(email,password)
     createUserWithEmailAndPassword(firebaseAuth,email,password);
     navigate('/');
-
   }
   return (
     <div id='website'>

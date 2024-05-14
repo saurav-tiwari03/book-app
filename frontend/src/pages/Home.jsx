@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-key */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Spinner } from './../components/Spinner';
@@ -40,9 +42,6 @@ export const Home = () => {
       <div className='flex flex-col items-center gap-4 py-4'>
         <h1 className='text-[#f26422] font-semibold text-5xl'>Books List</h1>
       </div>
-      {loading ? (
-        <Spinner />
-      ) : (
         <div className='flex items-center justify-start gap-10 my-10' id='container'>
             {books.map((book, index) => {
               return (
@@ -50,9 +49,7 @@ export const Home = () => {
               )
             })}
               <Link className='text-[#f26422]  rounded-md  font-semibold text-5xl ' to='/books/create'><FaRegPlusSquare /></Link>
-        </div>
-      )}
-      
+        </div>    
       <div>
         <button className='bg-[#f26422] px-12 py-1 rounded-md text-white font-semibold' onClick={singOutHandler}>Signout</button>
       </div>
